@@ -1,6 +1,6 @@
-import { ReserveButton } from "./components/Buttons";
-import FeatureCard from "./components/FeatureCard";
-import ServiceCard from "./components/ServiceCard";
+import { ReserveButton } from "../components/Buttons";
+import FeatureCard from "../components/FeatureCard";
+import ServiceCard from "../components/ServiceCard";
 
 export const metadata = {
   title: "Pet Care",
@@ -14,7 +14,7 @@ export default async function HomePage() {
   ).json();
   console.log(fetchData);
   return (
-    <section className="mt-10">
+    <section className="my-10">
       <div className="flex flex-col items-center gap-3 mb-10">
         <h1 className="text-5xl text-emerald-500 dark:text-emerald-400">
           PetCare
@@ -47,7 +47,7 @@ export default async function HomePage() {
           />
         ))}
       </div>
-      <div className="flex flex-col items-center gap-7 my-20 bg-white dark:bg-zinc-800 p-10 mx-32 rounded shadow shadow-zinc-400 dark:shadow-zinc-950 transition-transform hover:scale-105">
+      <div className="flex flex-col items-center gap-7 my-20 bg-white dark:bg-zinc-800 p-10 rounded shadow shadow-zinc-400 dark:shadow-zinc-950 transition-transform hover:scale-105">
         <h1 className="text-2xl text-emerald-500 dark:text-emerald-400">
           ¿Por qué elegirnos?
         </h1>

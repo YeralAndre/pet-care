@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { LoginButton } from "./components/Buttons";
-import ToggleTheme from "./components/ToggleTheme";
+import { LoginButton } from "../components/Buttons";
+import ToggleTheme from "../components/ToggleTheme";
 
 export default function Navbar({
   theme,
@@ -10,7 +10,7 @@ export default function Navbar({
   setTheme: (theme: string) => void;
 }) {
   return (
-    <section className="grid grid-cols-3 px-[20rem] py-5 bg-white dark:bg-zinc-900">
+    <section className="grid grid-cols-3 px-[30rem] py-5 bg-white dark:bg-zinc-900">
       <div className="flex items-center">
         <Link
           href="/"

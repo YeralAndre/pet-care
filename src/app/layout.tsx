@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="bg-background-white dark:bg-background-dark">
         <Navbar theme={theme} setTheme={setTheme} />
         <hr className="border border-solid border-1 border-border-white dark:border-border-dark" />
-        <main className="px-[20rem]">{children}</main>
+        <main className="px-[30rem]">{children}</main>
       </body>
     </html>
   );
