@@ -12,11 +12,13 @@ export default function ToggleTheme({
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    newTheme === "dark"
-      ? (document.documentElement.classList.remove("white"),
-        document.documentElement.classList.add("white"))
-      : (document.documentElement.classList.remove("dark"),
-        document.documentElement.classList.add("white"));
+    if (newTheme === "dark") {
+      document.documentElement.classList.remove("white");
+      document.documentElement.classList.add("white");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("dark");
+    }
   };
   return (
     <Image
@@ -25,7 +27,9 @@ export default function ToggleTheme({
       width={30}
       height={30}
       className="dark:invert cursor-pointer"
-      onClick={() => {toggleTheme()}}
+      onClick={() => {
+        toggleTheme();
+      }}
     />
   );
 }
