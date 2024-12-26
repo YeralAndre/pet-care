@@ -14,7 +14,7 @@ export default function Navbar({
       <div className="flex items-center">
         <Link
           href="/"
-          className="text-xl font-semibold text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500"
+          className="text-xl text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500"
         >
           PetCare
         </Link>

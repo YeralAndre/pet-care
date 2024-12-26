@@ -32,6 +32,16 @@ export default {
       transitions: {
         default: "all 0.2s ease-in-out",
       },
+      backgroundImage: {
+        "pin-dark": "url('/img/pin_dark.svg')",
+        "pin-light": "url('/img/pin_light.svg')",
+        "clock-dark": "url('/img/clock_dark.svg')",
+        "clock-light": "url('/img/clock_light.svg')",
+        "phone-dark": "url('/img/phone_dark.svg')",
+        "phone-light": "url('/img/phone_light.svg')",
+        "mail-dark": "url('/img/mail_dark.svg')",
+        "mail-light": "url('/img/mail_light.svg')",
+      },
     },
   },
   plugins: [],
