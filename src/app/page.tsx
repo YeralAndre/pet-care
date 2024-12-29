@@ -16,15 +16,15 @@ export default async function HomePage() {
   return (
     <section className="my-10">
       <div className="flex flex-col items-center gap-3 mb-10">
-        <h1 className="text-5xl text-emerald-500 dark:text-emerald-400">
+        <h1 className="text-4xl md:text-5xl text-emerald-500 dark:text-emerald-400 text-center">
           PetCare
         </h1>
-        <h3 className="text-gray-600 dark:text-zinc-400 text-lg">
+        <h3 className="text-gray-600 dark:text-zinc-400 text-base md:text-lg text-center">
           Cuidamos con amor, sanamos con ciencia.
         </h3>
         <ReserveButton />
       </div>
-      <div className="grid grid-cols-3 px-20">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-10 px-20">
         {[
           {
             title: "Cuidado Canino",
@@ -51,7 +51,7 @@ export default async function HomePage() {
         <h1 className="text-2xl text-emerald-500 dark:text-emerald-400">
           ¿Por qué elegirnos?
         </h1>
-        <div className="grid grid-cols-2 gap-52">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-52 gap-3">
           <ul className="flex flex-col list-disc gap-3">
             <li className="text-emerald-500 dark:text-emerald-400">
               <span className="text-zinc-600 dark:text-zinc-400">
@@ -92,7 +92,7 @@ export default async function HomePage() {
         <h1 className="text-2xl text-emerald-500 dark:text-emerald-400">
           Servicios Destacados
         </h1>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {[
           {
             title: "Consultas",

@@ -23,7 +23,7 @@ export default function FeatureCard({
       <h3 className="my-2 text-lg text-emerald-600 dark:text-emerald-400">
         {title}
       </h3>
-      <p className="text-zinc-600 dark:text-zinc-400">{description}</p>
+      <p className="text-zinc-600 dark:text-zinc-400 text-center">{description}</p>
     </div>
   );
 }

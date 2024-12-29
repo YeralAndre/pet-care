@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <section className="my-10 flex flex-row justify-between gap-5">
+    <section className="my-10 flex flex-col md:flex-row justify-between gap-5 items-center">
       <div>
         <h1 className="text-4xl text-emerald-500 dark:text-emerald-400">
           Contacto
@@ -93,9 +93,7 @@ export default function ContactPage() {
             />
           </div>
           <div className="my-5">
-            <label className="text-dark dark:text-white">
-              Asunto
-            </label>
+            <label className="text-dark dark:text-white">Asunto</label>
             <input
               type="text"
               id="issue"
@@ -105,10 +103,7 @@ export default function ContactPage() {
             />
           </div>
           <div className="my-5">
-            <label
-              className="text-black dark:text-white"
-              htmlFor="message"
-            >
+            <label className="text-black dark:text-white" htmlFor="message">
               Mensaje
             </label>
             <textarea

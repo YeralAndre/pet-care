@@ -1,11 +1,30 @@
 "use client";
 
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LoginButton } from "../components/Buttons";
 import ToggleTheme from "../components/ToggleTheme";
+import Image from "next/image";
 
+const Bar = ({ size }: { size: number }) => (
+  <Image
+    src="/img/bar.svg"
+    className="dark:invert"
+    alt="Bar"
+    width={size}
+    height={size}
+  />
+);
 
+const X = ({ size }: { size: number }) => (
+  <Image
+    src="/img/x.svg"
+    className="dark:invert"
+    alt="X"
+    width={size}
+    height={size}
+  />
+);
 
 export default function Navbar({
   theme,
@@ -14,9 +33,17 @@ export default function Navbar({
   theme: string;
   setTheme: (theme: string) => void;
 }) {
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuIcon, setMenuIcon] = useState(<Bar size={25} />);
+  useEffect(() => {
+    if (menuOpen) {
+      setMenuIcon(<X size={25} />);
+    } else {
+      setMenuIcon(<Bar size={25} />);
+    }
+  }, [menuOpen]);
   return (
-    <nav className="flex flex-row items-center justify-between px-[30rem] py-5 bg-white dark:bg-zinc-900">
+    <nav className="flex flex-row items-center justify-between px-[2rem] md:px-[30rem] py-5 bg-white dark:bg-zinc-900">
       <div className="flex items-center w-[11rem]">
         <Link
           href="/"
@@ -25,7 +52,7 @@ export default function Navbar({
           PetCare
         </Link>
       </div>
-      <div className="flex gap-10">
+      <div className="hidden md:flex gap-10">
         <Link
           href="/products"
           className="text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400"
@@ -45,10 +72,52 @@ export default function Navbar({
           Contacto
         </Link>
       </div>
-      <div className="flex gap-3 w-[11rem]">
+      <div className="hidden md:flex gap-3 w-[11rem] justify-end">
         <ToggleTheme theme={theme} setTheme={setTheme} />
         <LoginButton />
       </div>
+      {/* Mobile dropdown */}
+      <div className="md:hidden flex gap-3">
+        <ToggleTheme theme={theme} setTheme={setTheme} />
+        <button
+          className="flex items-center gap-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuIcon}
+        </button>
+      </div>
+      {menuOpen && (
+        <div
+          className={`md:hidden absolute top-[4.25rem] left-0 w-full bg-white dark:bg-zinc-900 shadow-md border-b border-zinc-200 dark:border-zinc-800 items-center`}
+        >
+          <div className="px-6 py-3 space-y-2 flex flex-col w-full items-center">
+            <Link
+              href="/products"
+              className="py-3 text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 w-full text-start"
+              onClick={() => setMenuOpen(false)}
+            >
+              Productos
+            </Link>
+            <Link
+              href="/team"
+              className="py-3 text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 w-full text-start"
+              onClick={() => setMenuOpen(false)}
+            >
+              Equipo
+            </Link>
+            <Link
+              href="/contact"
+              className="py-3 text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 w-full text-start"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contacto
+            </Link>
+            <div className="flex gap-3 w-[11rem] justify-center pb-1">
+              <LoginButton className="w-full" />
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

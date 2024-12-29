@@ -1,9 +1,11 @@
 "use client";
 
-export function LoginButton() {
+export function LoginButton({ className }: { className?: string }) {
   return (
     <button
-      className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded transition-transform hover:scale-105"
+      className={`bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded transition-transform hover:scale-105${
+        className ? " " + className : ""
+      }`}
       onClick={() => alert("Hello World!")}
     >
       Iniciar sesión

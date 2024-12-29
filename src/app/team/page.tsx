@@ -43,12 +43,12 @@ const reviews = [
 export default function TeamPage() {
   return (
     <section className="my-10">
-      <div className="flex flex-col">
-        <h1 className="flex justify-start text-4xl text-emerald-500 dark:text-emerald-400">
+      <div className="flex flex-col items-center">
+        <h1 className="flex justify-start text-4xl text-center md:text-left text-emerald-500 dark:text-emerald-400 w-full">
           Nuestro Equipo
         </h1>
         <div className="flex justify-center">
-          <div className="grid grid-cols-3 gap-10 my-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 my-10">
             {team.map((member) => (
               <TeamCard
                 key={member.name}
@@ -60,11 +60,11 @@ export default function TeamPage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <h1 className="flex justify-start text-2xl text-emerald-500 dark:text-emerald-400">
+      <div className="flex flex-col items-center">
+        <h1 className="flex justify-start text-2xl text-center md:text-left text-emerald-500 dark:text-emerald-400 w-full">
           Lo que dicen nuestros clientes
         </h1>
-        <div className="grid grid-cols-3 gap-10 my-5 px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 my-5 items-center">
           {reviews.map((review) => (
             <ReviewCard
               key={review.id}
