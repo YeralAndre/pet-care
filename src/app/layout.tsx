@@ -1,7 +1,7 @@
 "use client";
 
 import { Outfit } from "next/font/google";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="bg-background-white dark:bg-background-dark">
         <Navbar theme={theme} setTheme={setTheme} />
         <hr className="border border-solid border-1 border-border-white dark:border-border-dark" />
-        <main className="md:px-[30rem] px-10">{children}</main>
+        <main className="lg:px-[30rem] px-10">{children}</main>
       </body>
     </html>
   );

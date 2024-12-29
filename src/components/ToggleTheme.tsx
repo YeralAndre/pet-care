@@ -27,17 +27,19 @@ export default function ToggleTheme({
     }
   };
   return (
-    <Image
-      src={oldTheme === "light" ? "/img/moon.svg" : "/img/sun.svg"}
-      alt="ThemeIcon"
-      width={30}
-      height={30}
-      className={`dark:invert cursor-pointer${
-        className ? " " + className : ""
-      }`}
-      onClick={() => {
-        toggleTheme();
-      }}
-    />
+    <button
+      className="flex items-center justify-center px-2 hover:dark:bg-zinc-800 hover:bg-zinc-200 rounded-lg"
+      onClick={() => toggleTheme()}
+    >
+      <Image
+        src={oldTheme === "light" ? "/img/moon.svg" : "/img/sun.svg"}
+        alt="ThemeIcon"
+        width={22}
+        height={22}
+        className={`dark:invert cursor-pointer${
+          className ? " " + className : ""
+        }`}
+      />
+    </button>
   );
 }

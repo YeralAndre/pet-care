@@ -10,7 +10,7 @@ export default function ReviewCard({
   comment: string;
 }) {
   return (
-    <div className="flex flex-col gap-3 bg-white dark:bg-zinc-800 rounded shadow shadow-zinc-400 dark:shadow-zinc-950 p-5 transition-transform hover:scale-105 w-[18rem] h-[7.5rem]">
+    <div className="flex flex-col gap-3 bg-white dark:bg-zinc-800 rounded shadow shadow-zinc-400 dark:shadow-zinc-950 p-5 transition-transform hover:-translate-y-1 w-[18rem] h-[7.5rem]">
       <div className="flex justify-between gap-3">
         <h3 className="text-lg text-black dark:text-white">{name}</h3>
         <div className="flex items-center gap-1">

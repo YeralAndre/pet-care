@@ -20,7 +20,7 @@ export default function FeatureCard({
           className="border border-none rounded-full bg-cover dark:invert"
         />
       </div>
-      <h3 className="my-2 text-lg text-emerald-600 dark:text-emerald-400">
+      <h3 className="my-2 text-lg text-emerald-600 dark:text-emerald-400 text-center">
         {title}
       </h3>
       <p className="text-zinc-600 dark:text-zinc-400 text-center">{description}</p>

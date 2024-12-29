@@ -49,7 +49,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <div className="border-zinc-200 dark:border-zinc-700 rounded-xl shadow shadow-zinc-400 dark:shadow-zinc-950 p-5 transition-transform hover:scale-105 bg-white dark:bg-zinc-800">
+      <div className="border-zinc-200 dark:border-zinc-700 rounded-xl shadow shadow-zinc-400 dark:shadow-zinc-950 p-5 bg-white dark:bg-zinc-800">
         <h2 className="text-xl text-emerald-500 dark:text-emerald-400">
           Envíanos un mensaje
         </h2>
@@ -115,7 +115,7 @@ export default function ContactPage() {
           </div>
           <button
             type="submit"
-            className="w-full h-10 bg-emerald-500 dark:bg-emerald-400 text-white rounded"
+            className="w-full h-10 bg-emerald-500 dark:bg-emerald-400 text-white rounded hover:bg-emerald-600"
           >
             Enviar
           </button>

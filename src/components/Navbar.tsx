@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { LoginButton } from "../components/Buttons";
-import ToggleTheme from "../components/ToggleTheme";
+import { LoginButton, ShoppingCartButton, UserButton } from "./Buttons";
+import ToggleTheme from "./ToggleTheme";
 import Image from "next/image";
 
 const Bar = ({ size }: { size: number }) => (
@@ -35,15 +35,26 @@ export default function Navbar({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIcon, setMenuIcon] = useState(<Bar size={25} />);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
-    if (menuOpen) {
-      setMenuIcon(<X size={25} />);
-    } else {
-      setMenuIcon(<Bar size={25} />);
-    }
-  }, [menuOpen]);
+    const mobileMenu = () => {
+      if (menuOpen) {
+        setMenuIcon(<X size={25} />);
+      } else {
+        setMenuIcon(<Bar size={25} />);
+      }
+    };
+    const auth = () => {
+      const authenticated = localStorage.getItem("isAuthenticated");
+      if (authenticated === "true") {
+        setIsAuthenticated(true);
+      }
+    };
+    mobileMenu();
+    auth();
+  }, [menuOpen, isAuthenticated]);
   return (
-    <nav className="flex flex-row items-center justify-between px-[2rem] md:px-[30rem] py-5 bg-white dark:bg-zinc-900">
+    <nav className="flex flex-row items-center justify-between px-[2rem] lg:px-[30rem] py-5 bg-white dark:bg-zinc-900">
       <div className="flex items-center w-[11rem]">
         <Link
           href="/"
@@ -52,7 +63,7 @@ export default function Navbar({
           PetCare
         </Link>
       </div>
-      <div className="hidden md:flex gap-10">
+      <div className="hidden lg:flex gap-10">
         <Link
           href="/products"
           className="text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400"
@@ -72,12 +83,13 @@ export default function Navbar({
           Contacto
         </Link>
       </div>
-      <div className="hidden md:flex gap-3 w-[11rem] justify-end">
+      <div className="hidden lg:flex gap-5 w-[11rem] justify-end">
         <ToggleTheme theme={theme} setTheme={setTheme} />
-        <LoginButton />
+        {isAuthenticated && <ShoppingCartButton />}
+        {isAuthenticated ? <UserButton /> : <LoginButton />}
       </div>
       {/* Mobile dropdown */}
-      <div className="md:hidden flex gap-3">
+      <div className="lg:hidden flex gap-3">
         <ToggleTheme theme={theme} setTheme={setTheme} />
         <button
           className="flex items-center gap-2"
@@ -88,7 +100,7 @@ export default function Navbar({
       </div>
       {menuOpen && (
         <div
-          className={`md:hidden absolute top-[4.25rem] left-0 w-full bg-white dark:bg-zinc-900 shadow-md border-b border-zinc-200 dark:border-zinc-800 items-center`}
+          className={`lg:hidden absolute top-[4.25rem] left-0 w-full bg-white dark:bg-zinc-900 shadow-md border-b border-zinc-200 dark:border-zinc-800 items-center`}
         >
           <div className="px-6 py-3 space-y-2 flex flex-col w-full items-center">
             <Link
@@ -113,7 +125,8 @@ export default function Navbar({
               Contacto
             </Link>
             <div className="flex gap-3 w-[11rem] justify-center pb-1">
-              <LoginButton className="w-full" />
+              {isAuthenticated && <ShoppingCartButton />}
+              {isAuthenticated ? <UserButton /> : <LoginButton />}
             </div>
           </div>
         </div>
