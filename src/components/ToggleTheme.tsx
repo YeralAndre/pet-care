@@ -5,9 +5,11 @@ import Image from "next/image";
 export default function ToggleTheme({
   theme,
   setTheme,
+  className,
 }: {
   theme: string;
   setTheme: (theme: string) => void;
+  className?: string;
 }) {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -26,7 +28,7 @@ export default function ToggleTheme({
       alt="Sun"
       width={30}
       height={30}
-      className="dark:invert cursor-pointer"
+      className={`dark:invert cursor-pointer${className ? " " + className : ""}`}
       onClick={() => {
         toggleTheme();
       }}

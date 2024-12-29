@@ -1,6 +1,11 @@
+"use client";
+
+
 import Link from "next/link";
 import { LoginButton } from "../components/Buttons";
 import ToggleTheme from "../components/ToggleTheme";
+
+
 
 export default function Navbar({
   theme,
@@ -9,9 +14,10 @@ export default function Navbar({
   theme: string;
   setTheme: (theme: string) => void;
 }) {
+  
   return (
-    <section className="grid grid-cols-3 px-[30rem] py-5 bg-white dark:bg-zinc-900">
-      <div className="flex items-center">
+    <nav className="flex flex-row items-center justify-between px-[30rem] py-5 bg-white dark:bg-zinc-900">
+      <div className="flex items-center w-[11rem]">
         <Link
           href="/"
           className="text-xl text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500"
@@ -19,7 +25,7 @@ export default function Navbar({
           PetCare
         </Link>
       </div>
-      <div className="flex gap-10 items-center justify-center">
+      <div className="flex gap-10">
         <Link
           href="/products"
           className="text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400"
@@ -39,10 +45,10 @@ export default function Navbar({
           Contacto
         </Link>
       </div>
-      <div className="flex gap-5 items-center justify-end">
+      <div className="flex gap-3 w-[11rem]">
         <ToggleTheme theme={theme} setTheme={setTheme} />
         <LoginButton />
       </div>
-    </section>
+    </nav>
   );
 }
