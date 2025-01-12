@@ -36,6 +36,7 @@ export default function Navbar({
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIcon, setMenuIcon] = useState(<Bar size={25} />);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   useEffect(() => {
     const mobileMenu = () => {
       if (menuOpen) {

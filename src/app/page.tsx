@@ -9,10 +9,6 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const fetchData = await (
-    await fetch("https://jsonplaceholder.typicode.com/todos/1")
-  ).json();
-  console.log(fetchData);
   return (
     <section className="my-10">
       <div className="flex flex-col items-center gap-3 mb-10">
@@ -93,31 +89,31 @@ export default async function HomePage() {
           Servicios Destacados
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-        {[
-          {
-            title: "Consultas",
-            description: "Chequeos completos",
-          },
-          {
-            title: "Cirugía",
-            description: "Procedimientos avanzados",
-          },
-          {
-            title: "Nutrición",
-            description: "Planes personalizados",
-          },
-          {
-            title: "Rehabilitación",
-            description: "Terapia integral",
-          },
-        ].map((service, i) => (
-          <ServiceCard
-            key={i}
-            src="/img/icon.png"
-            title={service.title}
-            description={service.description}
-          />
-        ))}
+          {[
+            {
+              title: "Consultas",
+              description: "Chequeos completos",
+            },
+            {
+              title: "Cirugía",
+              description: "Procedimientos avanzados",
+            },
+            {
+              title: "Nutrición",
+              description: "Planes personalizados",
+            },
+            {
+              title: "Rehabilitación",
+              description: "Terapia integral",
+            },
+          ].map((service, i) => (
+            <ServiceCard
+              key={i}
+              src="/img/icon.png"
+              title={service.title}
+              description={service.description}
+            />
+          ))}
         </div>
       </div>
     </section>

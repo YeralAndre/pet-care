@@ -20,10 +20,12 @@ export default function ToggleTheme({
       document.documentElement.classList.remove("white");
       document.documentElement.classList.add("white");
       setOldTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("dark");
       setOldTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
     }
   };
   return (
