@@ -34,10 +34,13 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en" className={`${outfit.className} ${theme}`}>
-      <body className="bg-background-white dark:bg-background-dark" suppressHydrationWarning>
+      <body
+        className="bg-background-white dark:bg-background-dark"
+        suppressHydrationWarning
+      >
         <Navbar theme={theme} setTheme={setTheme} />
-        <hr className="border border-solid border-1 border-border-white dark:border-border-dark" />
-        <main className="lg:px-[30rem] px-10">{children}</main>
+        <hr className="border border-solid border-border-white dark:border-border-dark" />
+        <main className="lg:px-120 px-10">{children}</main>
       </body>
     </html>
   );

@@ -1,6 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background-white: #f1f8f4;
+  --color-background-dark: #1f2c26;
+
+  --color-border-white: #e5e7eb;
+  --color-border-dark: #27272a;
+
+  --color-text-primary: #171717;
+  --color-text-secondary: #525252;
+
+  --color-accent-primary: #22c55e;
+  --color-accent-secondary: #86efac;
+  --color-accent-tertiary: #f43f5e;
+
+  --color-hover: #16a34a;
+
+  --background-image-pin-dark: url("/img/pin_dark.svg");
+  --background-image-pin-light: url("/img/pin_light.svg");
+  --background-image-clock-dark: url("/img/clock_dark.svg");
+  --background-image-clock-light: url("/img/clock_light.svg");
+  --background-image-phone-dark: url("/img/phone_dark.svg");
+  --background-image-phone-light: url("/img/phone_light.svg");
+  --background-image-mail-dark: url("/img/mail_dark.svg");
+  --background-image-mail-light: url("/img/mail_light.svg");
+}
+
+@utility transition-default {
+  transition: all 0.2s ease-in-out;
+}
 
 * {
   @apply transition-colors duration-300;
